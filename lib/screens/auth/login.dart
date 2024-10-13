@@ -1,96 +1,68 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fruits_app/components/button_comp.dart';
-import 'package:fruits_app/screens/auth/splashscreen.dart';
+import 'package:fruits_app/components/inputcomp.dart';
 
-class UserAuthScreen extends StatelessWidget {
-  const UserAuthScreen({super.key});
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFF0F0F0),
+      appBar: AppBar(
+        backgroundColor: const Color(0xFFF2F3F4),
+        title: const Text(
+          "Login",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 24,
+            fontFamily: 'Jost',
+            fontWeight: FontWeight.w400,
+            fontStyle: FontStyle.italic,
+            letterSpacing: 0.24,
+          ),
+        ),
+        centerTitle: true,
+      ),
       body: Container(
-        height: MediaQuery.of(context).size.height,
-        width: double.infinity,
+        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // --------------------------------- Gambar
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height * 0.5,
-              decoration: ShapeDecoration(
-                image: DecorationImage(
-                  image: AssetImage('assets/images/auth/loginscreen.jpg'),
-                  fit: BoxFit.cover,
-                ),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(
-                      MediaQuery.of(context).size.width * 0.25,
-                    ),
-                  ),
-                ),
+            Expanded(
+              child: SvgPicture.asset(
+                'assets/logo.svg',
+                height: 200,
+                color: Colors.black,
               ),
             ),
-            // --------------------------------- Tulisan dan Lingkaran
-            Container(
-              height: MediaQuery.of(context).size.height * 0.5,
-              padding: EdgeInsets.symmetric(horizontal: 40, vertical: 40),
-              child: const Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    children: [
-                      Text(
-                        "Masuk Dulu, Baru Pesan",
-                        textAlign: TextAlign.center,
+            Column(
+              children: [
+                InputComp(label: "Login"),
+                SizedBox(
+                  height: 15,
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    InputComp(label: "Password"),
+                    SizedBox(
+                      height: 7,
+                    ),
+                    Opacity(
+                      opacity: 0.85,
+                      child: Text(
+                        "Lupa Password?",
                         style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
                           fontFamily: 'Jost',
-                          fontSize: 24,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w700,
                         ),
                       ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      Text(
-                        "Sudah Punya Akun?",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Jost',
-                          height: 1.6,
-                          fontSize: 16,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      BtnPrimary(
-                          buttonText: "Login", onPressed: Splashscreen.new),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      Text(
-                        "Sudah Punya Akun?",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          fontFamily: 'Jost',
-                          height: 1.6,
-                          fontSize: 14,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                      SecondBtn(
-                          buttonText: "Sign Up", onPressed: Splashscreen.new)
-                    ],
-                  )
-                ],
-              ),
+                    ),
+                  ],
+                )
+              ],
             ),
           ],
         ),
