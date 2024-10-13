@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:fruits_app/screens/auth/splashlog.dart';
+import 'package:fruits_app/components/button_comp.dart';
+import 'package:fruits_app/screens/auth/login.dart';
+import 'package:fruits_app/screens/auth/signup.dart';
+import 'package:fruits_app/screens/auth/splashscreen.dart';
 
-class Splashscreen extends StatelessWidget {
-  const Splashscreen({super.key});
+class UserAuthScreen extends StatelessWidget {
+  const UserAuthScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,7 @@ class Splashscreen extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.5,
               decoration: ShapeDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/auth/splash1.jpg'),
+                  image: AssetImage('assets/images/auth/loginscreen.jpg'),
                   fit: BoxFit.cover,
                 ),
                 shape: RoundedRectangleBorder(
@@ -42,7 +45,7 @@ class Splashscreen extends StatelessWidget {
                   Column(
                     children: [
                       Text(
-                        "Any Where, Any Time",
+                        "Masuk Dulu, Baru Pesan",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'Jost',
@@ -55,7 +58,7 @@ class Splashscreen extends StatelessWidget {
                         height: 15,
                       ),
                       Text(
-                        "Temukan vending machine kami di lokasi strategis dan jadikan pilihan sehat selalu dekat denganmu.",
+                        "Sudah Punya Akun?",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontFamily: 'Jost',
@@ -65,26 +68,44 @@ class Splashscreen extends StatelessWidget {
                       ),
                     ],
                   ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => UserAuthScreen()));
-                    },
-                    child: Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          shape: BoxShape.circle, color: Colors.lightGreen),
-                      child: Center(
-                        child: SvgPicture.asset(
-                          'assets/icon/right-arrow.svg',
-                          height: 20,
-                          color: Colors.black,
+                  Column(
+                    children: [
+                      BtnPrimary(
+                        buttonText: "Login",
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => LoginPage()),
+                          );
+                        },
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      Text(
+                        "Sudah Punya Akun?",
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          fontFamily: 'Jost',
+                          height: 1.6,
+                          fontSize: 14,
                         ),
                       ),
-                    ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      SecondBtn(
+                        buttonText: "Sign Up",
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SignUpPage()),
+                          );
+                        },
+                      )
+                    ],
                   )
                 ],
               ),

@@ -13,18 +13,6 @@ class LoginPage extends StatelessWidget {
       backgroundColor: const Color(0xFFF0F0F0),
       appBar: AppBar(
         backgroundColor: const Color(0xFFF2F3F4),
-        title: const Text(
-          "Login",
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 24,
-            fontFamily: 'Jost',
-            fontWeight: FontWeight.w400,
-            fontStyle: FontStyle.italic,
-            letterSpacing: 0.24,
-          ),
-        ),
-        centerTitle: true,
       ),
       body: Container(
         width: double.infinity,
@@ -58,7 +46,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
-                    vertical: 15,
+                    vertical: 25,
                   ),
                   child: Opacity(
                     opacity: 0.30,
