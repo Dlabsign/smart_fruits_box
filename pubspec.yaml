@@ -28,6 +28,8 @@ flutter:
     - assets/images/auth/splash1.jpg
     - assets/images/auth/loginscreen.jpg
     - assets/icon/right-arrow.svg
+    - assets/icon/google.svg
+    - assets/icon/phone.svg
     - assets/logo.svg
   fonts:
     - family: Jost
