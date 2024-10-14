@@ -8,7 +8,7 @@ class Splashscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: double.infinity,
         child: Column(
@@ -19,7 +19,7 @@ class Splashscreen extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 0.5,
               decoration: ShapeDecoration(
-                image: DecorationImage(
+                image: const DecorationImage(
                   image: AssetImage('assets/images/auth/splash1.jpg'),
                   fit: BoxFit.cover,
                 ),
@@ -35,11 +35,11 @@ class Splashscreen extends StatelessWidget {
             // --------------------------------- Tulisan dan Lingkaran
             Container(
               height: MediaQuery.of(context).size.height * 0.5,
-              padding: EdgeInsets.symmetric(horizontal: 40, vertical: 40),
+              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(
+                  const Column(
                     children: [
                       Text(
                         "Any Where, Any Time",
@@ -70,12 +70,12 @@ class Splashscreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => UserAuthScreen()));
+                              builder: (context) => const UserAuthScreen()));
                     },
                     child: Container(
                       height: 100,
                       width: 100,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                           shape: BoxShape.circle, color: Colors.lightGreen),
                       child: Center(
                         child: SvgPicture.asset(

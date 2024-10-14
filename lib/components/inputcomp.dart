@@ -8,13 +8,13 @@ class InputComp extends StatefulWidget {
   final bool pass;
 
   const InputComp({
-    Key? key,
+    super.key,
     required this.label,
     this.controller,
     this.obscureText = false,
     this.validator,
     this.pass = false, // Menggunakan pass sebagai input password
-  }) : super(key: key);
+  });
 
   @override
   State<InputComp> createState() => _InputCompState();

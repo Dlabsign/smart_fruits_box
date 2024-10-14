@@ -11,7 +11,7 @@ class UserAuthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      body: SizedBox(
         height: MediaQuery.of(context).size.height,
         width: double.infinity,
         child: Column(
@@ -22,7 +22,7 @@ class UserAuthScreen extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 0.5,
               decoration: ShapeDecoration(
-                image: DecorationImage(
+                image: const DecorationImage(
                   image: AssetImage('assets/images/auth/loginscreen.jpg'),
                   fit: BoxFit.cover,
                 ),
@@ -38,11 +38,11 @@ class UserAuthScreen extends StatelessWidget {
             // --------------------------------- Tulisan dan Lingkaran
             Container(
               height: MediaQuery.of(context).size.height * 0.5,
-              padding: EdgeInsets.symmetric(horizontal: 40, vertical: 40),
+              padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(
+                  const Column(
                     children: [
                       Text(
                         "Masuk Dulu, Baru Pesan",
@@ -76,14 +76,14 @@ class UserAuthScreen extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => LoginPage()),
+                                builder: (context) => const LoginPage()),
                           );
                         },
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
-                      Text(
+                      const Text(
                         "Sudah Punya Akun?",
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -92,7 +92,7 @@ class UserAuthScreen extends StatelessWidget {
                           fontSize: 14,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 15,
                       ),
                       SecondBtn(
@@ -101,7 +101,7 @@ class UserAuthScreen extends StatelessWidget {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => SignUpPage()),
+                                builder: (context) => const SignUpPage()),
                           );
                         },
                       )
